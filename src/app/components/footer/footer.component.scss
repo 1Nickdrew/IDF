@@ -1,0 +1,17 @@
+@use '../../../styles' as *; // Chemin vers le fichier styles.scss
+
+footer{
+    max-height: 336px;
+    background-color: $secondary-color;
+}
+
+.eg-btn{
+    all: unset;
+    width: 176px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 25px;
+}

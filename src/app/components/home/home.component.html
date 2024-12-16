@@ -1,0 +1,235 @@
+<main>
+    <div class="hero">
+        <div class="left">
+            <div class="form-brand">
+                <div class="search-container">
+                    <h1>Rent the perfect vehicle, in just a few clicks</h1>
+                    <div class="car-rental-search">
+                        <form id="searchForm">
+                            <div class="form-pickup-input">
+                                <div class="form-group">
+                                    <form [formGroup]="form">
+                                        <app-custom-input
+                                          label="Pick up address"
+                                          placeholder="Pick up address"
+                                          [control]="getUsernameControl()"
+                                          [required]="true"
+                                          leftIconSrc="icones/event/location.svg"
+                                        ></app-custom-input>
+                                      </form>
+                                </div>
+                                <div class="form-group">
+                                    <form [formGroup]="form">
+                                        <app-custom-input
+                                          label="Pick up Date"
+                                          placeholder="Pick up Date"
+                                          [control]="getUsernameControl()"
+                                          [required]="true"
+                                          leftIconSrc="icones/event/calendar.svg"
+                                        ></app-custom-input>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="form-dropoff-input">
+                                <div class="form-group">
+                                    <form [formGroup]="form">
+                                        <app-custom-input
+                                          label="Drop of address"
+                                          placeholder="Drop of address"
+                                          [control]="getUsernameControl()"
+                                          [required]="true"
+                                          leftIconSrc="icones/event/location.svg"
+                                        ></app-custom-input>
+                                    </form>
+                                </div>
+                                <div class="form-group">
+                                    <form [formGroup]="form">
+                                        <app-custom-input
+                                          label="Drop of Date"
+                                          placeholder="Drop of Date"
+                                          [control]="getUsernameControl()"
+                                          [required]="true"
+                                          leftIconSrc="icones/event/calendar.svg"
+                                        ></app-custom-input>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="form-check">
+                                <label>
+                                    <input type="checkbox" id="checkbox" name="checkbox">
+                                    Driver included
+                                </label>
+                            </div>
+                            <app-custom-button type="submit" svgSrc="icones/button/minalisticMagnifer.svg">Find a car</app-custom-button>
+                        </form>
+                    </div>
+                </div>
+                <div class="car-logo">
+                    <img src="icones/brand/honda.svg" alt="">
+                    <img src="icones/brand/audi.svg" alt="">
+                    <img src="icones/brand/bmw.svg" alt="">
+                    <img src="icones/brand/ford.svg" alt="">
+                    <img src="icones/brand/hyundai.svg" alt="">
+                    <img src="icones/brand/jeep.svg" alt="">
+                    <img src="icones/brand/toyota.svg" alt="">
+                    <img src="icones/brand/volkswagen.svg" alt="">
+                    <img src="icones/brand/mercedes-benz.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            
+        </div>
+        <div class="img-right"><img src="images/homepage/hero.png" alt="hero" width="1447px"></div>
+    </div>
+
+    <div class="mouse"><img src="icones/event/mouse.svg" alt=""></div>
+
+    <div class="why-choose">
+        <div class="why-choose-left">
+            <img src="images/homepage/whychoose.png" alt="">
+        </div>
+        <div class="why-choose-right">
+            <div class="why-choose-text">
+                <h1>Why choose us ?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur. Id id facilisis volutpat interdum massa.
+                   Potenti eleifend neque scelerisque varius mauris aenean gravida at ut. Aliquam 
+                   lacus quam tortor eget. Ut vestibulum proin risus tincidunt urna laoreet ipsum. 
+                   Nisl rutrum nunc pulvinar nibh bibendum tortor in. Urna dui sit mauris mauris 
+                   orci semper lorem duis. Posuere et proin dictum dolor cras mauris est massa molestie.
+                </p>
+            </div>
+            <div class="why-choose-stat">
+                <div class="metrics">
+                    <div class="metric-item">
+                        <h1>$ 40M</h1>
+                        <p>Total capital raised</p>
+                    </div>
+                    <div class="metric-item">
+                        <h1>44K</h1>
+                        <p>Customers feedback</p>
+                    </div>
+                    <div class="metric-item">
+                        <h1>4000</h1>
+                        <p>Global fleets</p>
+                    </div>
+                </div>
+                <div class="why-choose-btn"><app-custom-button>About IDF</app-custom-button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="trending">
+        <div class="trending-text">
+            <h1>Trending vehicles</h1>
+            <p>Explore our top rated collection cars</p>
+        </div>
+        <div class="trending-cars">
+            <div class="trending-filter">
+                <app-sub-nav 
+                [items]="brandItems"
+                [activeItem]="selectedBrand"
+                >
+                </app-sub-nav>
+                <div class="arrows">
+                    <app-custom-button svgSrc="icones/button/left-arrow.svg" [showText]="false" backgroundColor="none" borderStyle="none"></app-custom-button>
+                    <app-custom-button svgSrc="icones/button/right-arrow.svg" [showText]="false" backgroundColor="none" borderStyle="none"></app-custom-button>
+                </div>
+            </div>
+
+            <div class="card-list">
+                <div class="row-list">
+                    <app-car-card 
+                        *ngFor="let car of cars" 
+                        [carData]="car"
+                    ></app-car-card>
+                </div>
+                <div class="see-all-btn">
+                    <app-custom-button svgSrc="icones/button/alt-arrow-right.svg" iconPosition="end">See all cars</app-custom-button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mobile-section">
+        <div class="mobile-app-img">
+            <img src="images/homepage/phone-left.png" class="phone-left" alt="">
+            <img src="images/homepage/phone-right.png" class="phone-right" alt="">
+        </div>
+        <div class="mobile-app-cta">
+            <div class="mobile-app-text">
+                <h1>Rent any car anywhere</h1>
+                <p>Lorem ipsum dolor sit amet consectetur. Leo ut ultricies tempor purus eu. Aliquam id.</p>
+                <div class="cta-btn">
+                    <app-custom-button svgSrc="icones/button/ios.svg" backgroundColor="white" borderRadius="none">Download via Apple Store</app-custom-button>
+                    <app-custom-button svgSrc="icones/button/android.svg" backgroundColor="white" borderRadius="none">Download via Google Play</app-custom-button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!--<div class="testimony">
+        <div class="testimony-left">
+            <div class="testimony-text">
+                <div class="testimony-star">
+                    <img src="icones/card/star.svg" alt="">
+                    <img src="icones/card/star.svg" alt="">
+                    <img src="icones/card/star.svg" alt="">
+                    <img src="icones/card/star.svg" alt="">
+                    <img src="icones/card/star.svg" alt="">
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur. Adipiscing mattis sit amet elit dignissim sed vel. </p>
+            </div>
+            <div class="testimony-content">
+                <div class="testimony-user">
+                    <img src="icones/avatar/user1.svg" alt="">
+                    <div class="testimony-user-title">
+                        <h6>Katherine Moss</h6>
+                        <p>Project Manager, Layers</p>
+                    </div>
+                </div>
+                <div class="testimony-action">
+                    <app-custom-button svgSrc="icones/button/left-arrow.svg" [showText]="false" backgroundColor="none" borderStyle="none"></app-custom-button>
+                    <app-custom-button svgSrc="icones/button/right-arrow.svg" [showText]="false" backgroundColor="none" borderStyle="none"></app-custom-button>
+                </div>
+            </div>
+        </div>
+        <div class="testimony-right"><img src="icones/avatar/testimony.svg" alt=""></div>
+    </div>
+
+    
+    <div class="faq-section">
+        <div class="faq-header">
+            <div>
+                <h1>Frequently asked questions</h1>
+                <p>Everything you need to know about the product and billing.</p>
+            </div>
+        </div>
+        <div class="faq-content">
+            <div>
+                <div>
+                    <h1>Is there a free trial available?</h1>
+                    <p>Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free,
+                        personalized 30-minute onboarding call to get you up and running as soon as possible.</p>
+                </div>
+                <div>
+                    <button>
+                        <i class="fa-solid fa-circle-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h1>Is there a free trial available?</h1>
+                </div>
+                <div>
+                    <button>
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</main>

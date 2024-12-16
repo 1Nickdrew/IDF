@@ -1,0 +1,48 @@
+// sub-nav.component.scss
+
+@use '../../../styles' as *; // Chemin vers le fichier styles.scss
+
+.sub-nav {
+    display: flex;
+    gap: 10px; // Espace entre les éléments
+    
+    .sub-nav-icon {
+      // Dimensions flexibles
+      width: clamp(80px, 10vw, 94px);
+      height: clamp(40px, 6vh, 44px);
+  
+      // Padding adaptatif
+      padding: clamp(10px, 2vw, 12px) clamp(20px, 3vw, 24px);
+  
+      // Bordures arrondies
+      border-radius: 100px;
+  
+      // Flexbox
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+  
+      // Transition pour les effets
+      transition: all 0.3s ease;
+  
+      // Effets de survol
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        background-color: #f0f0f0; // Remplacez par votre variable de couleur
+      }
+  
+      // État actif
+      &.active {
+        background-color: $primary-color; // Couleur de l'élément actif
+        color: white;
+      }
+  
+      img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+    }
+  }

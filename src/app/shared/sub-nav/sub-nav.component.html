@@ -1,0 +1,12 @@
+<!-- sub-nav.component.html -->
+<div class="sub-nav">
+    <div 
+      *ngFor="let item of items" 
+      class="sub-nav-icon"
+      [class.active]="activeItem === item.label"
+      (click)="onItemClick(item)"
+    >
+      <img [src]="item.icon" [alt]="item.label">
+      <span>{{ item.label }}</span>
+    </div>
+  </div>

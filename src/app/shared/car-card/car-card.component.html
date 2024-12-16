@@ -1,0 +1,48 @@
+<!-- car-card.component.html -->
+<div class="card">
+    <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item-active">
+          <img 
+            [src]="carData.images[0].base" 
+            class="base-image" 
+            alt="Car Image"
+          >
+          <img 
+            [src]="carData.images[0].overlay" 
+            class="overlay-image" 
+            [class.liked]="isLiked"
+            (click)="toggleLike()"
+            alt="Like"
+          >
+        </div>
+      </div>
+    </div>
+    
+    <div class="card-body">
+      <div class="card-body-one">
+        <h5 class="card-title">{{ carData.details.title }}</h5>
+        
+        <div class="card-text">
+          <img src="icones/card/transmission-square.svg" alt="Transmission">
+          <span>{{ carData.details.transmission }}</span>
+        </div>
+        
+        <div class="card-icons">
+          <div class="card-icons-info">
+            <img src="icones/card/armchair.svg" alt="Seats">
+            <span>{{ carData.details.seats }}</span>
+          </div>
+          
+          <div class="card-icons-info">
+            <img src="icones/card/star.svg" alt="Rating">
+            <span>{{ carData.details.rating }}</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-price">
+        <h5>${{ carData.details.pricePerDay }} / day</h5>
+      </div>
+    </div>
+  </div>

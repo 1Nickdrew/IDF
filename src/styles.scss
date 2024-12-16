@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Définition des variables de couleurs
+$primary-color: rgba(255, 188, 1, 1); // Jaune
+$secondary-color: rgba(21, 125, 73, 1); // Vert
+$accent-color: #e74c3c; // Rouge
+$text-color: #333333; // Couleur du texte
+$background-color: rgba(244, 247, 250, 1); // Couleur de fond
+$neutral-color-800: rgba(53, 59, 65, 1);
+$neutral-color-200: rgba(222, 228, 235, 1);
+$success-color: rgba(7, 42, 24, 1);
+$white-color: rgba(255, 255, 255, 1);
+$black-color: rgba(0, 0, 0, 1);
+
+// Définition des variables de polices
+$font-primary: 'Roboto', sans-serif; // Police principale
+$font-secondary: 'Arial', sans-serif; // Police secondaire
+
+// Appliquer les styles globaux
+body {
+  font-family: $font-primary;
+  color: $text-color;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+// Autres styles globaux
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary;
+  color: $text-color;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

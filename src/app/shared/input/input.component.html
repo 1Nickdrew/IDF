@@ -1,0 +1,60 @@
+<div class="custom-input-container">
+    <!-- Label -->
+    <label 
+      [for]="inputId" 
+      class="custom-label"
+      [class.disabled]="disabled"
+    >
+      {{ label }}
+      <span *ngIf="required" class="required-asterisk">*</span>
+    </label>
+
+    <!-- Conteneur de l'input -->
+    <div 
+      class="input-wrapper" 
+      [class.focused]="isFocused"
+      [class.disabled]="disabled"
+      [class.error]="showError"
+    >
+      <!-- Icône de gauche (optionnelle) -->
+      <ng-container *ngIf="leftIconSrc">
+        <img 
+          [src]="leftIconSrc" 
+          alt="Left Icon" 
+          class="input-icon left-icon"
+        />
+      </ng-container>
+
+      <!-- Input -->
+      <input 
+        [type]="type"
+        [id]="inputId"
+        [formControl]="control"
+        [placeholder]="placeholder"
+        [disabled]="disabled"
+        (focus)="onFocus()"
+        (blur)="onBlur()"
+        class="custom-input"
+      />
+
+      <!-- Icône de droite (optionnelle) -->
+      <ng-container *ngIf="rightIconSrc">
+        <img 
+          [src]="rightIconSrc" 
+          alt="Right Icon" 
+          class="input-icon right-icon"
+          (click)="onRightIconClick()"
+        />
+      </ng-container>
+    </div>
+
+    <!-- Messages d'erreur -->
+    <div 
+      *ngIf="showError" 
+      class="error-message"
+    >
+      <ng-container *ngFor="let error of errorMessages">
+        <p>{{ error }}</p>
+      </ng-container>
+    </div>
+  </div>

@@ -1,0 +1,669 @@
+@use '../../../styles' as *; // Chemin vers le fichier styles.scss
+
+
+//start CSS from Hero Section
+div.hero {
+    flex: 1;
+    display: flex;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    flex-direction: row;
+    width: 100%;
+}
+
+div.left{
+    flex: 1.5;
+    height: auto; /* Utilisez auto pour adapter à votre contenu */
+    margin-top: 220px;
+}
+
+div.right{
+    flex: 1;
+    height: auto; /* Adaptatif */
+    background-color: $success-color;
+}
+
+div.mouse{
+    display: flex;
+    justify-content: center;
+}
+
+div.img-right{
+    /* La version desktop avec positionnement absolu */
+    position: absolute;
+    margin-top: -77px;
+    margin-left: 382px;
+}
+
+div.form-brand{
+    padding-left: 116px;
+}
+
+div.form-pickup-input{
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+div.form-dropoff-input{
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+div.form-check{
+    width: 126px; /* Conversion de 'Hug (126px)' en valeur fixe */
+    height: 21px; /* Conversion de 'Hug (21px)' en valeur fixe */
+    gap: 12px;
+    margin-bottom: 48px;
+}
+
+form{
+    max-width: 370px;
+}
+
+div.search-container{
+    margin-bottom: 43px;
+}
+
+div.car-logo {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+    gap: 78px;
+    width: 450px;
+    height: auto;
+    top: 808px;
+    left: 118px;
+}
+
+div.car-logo img {
+    filter: invert(0) sepia(0) saturate(0) hue-rotate(0deg) brightness(0.58) contrast(1);
+}
+
+/* Media Queries pour le responsive design */
+
+@media (max-width: 768px) {
+    div.hero {
+        flex-direction: column;
+    }
+    div.left, div.right {
+        width: 100%; /* Prend toute la largeur disponible */
+    }
+    div.left {
+        height: 300px; /* Hauteur d'exemple, ajustez selon votre contenu */
+        margin-top: 54px; /* Réinitialiser la marge pour les mobiles */
+        /* Ajout de l'image de fond */
+        background-image: url('../../../../public/images/homepage/hero.png');
+        background-size: cover; /* Couvre toute la surface */
+        background-position: left 20px top; /* Décalage de 20px vers la droite */
+    }
+    div.right {
+        display: none;
+        min-height: 300px; /* Hauteur minimale pour les mobiles */
+    }
+    div.img-right {
+        position: static; /* Pas de positionnement absolu sur mobile */
+        margin-top: 0;
+        margin-left: 0;
+        display: none;
+    }
+    div.mouse{
+        display: none;
+    }
+    div.form-brand {
+        padding: 20px; /* Réduire la marge pour les petits écrans */
+    }
+    div.form-pickup-input, div.form-dropoff-input {
+        flex-direction: column; /* Passer à une disposition verticale pour les petits écrans */
+        gap: 10px;
+    }
+    div.form-check {
+        width: 100%; /* Occuper toute la largeur disponible */
+        height: auto; /* Adapter la hauteur */
+    }
+    form {
+        max-width: 100%; /* Prend toute la largeur disponible */
+    }
+    div.search-container {
+        margin-bottom: 20px; /* Réduire la marge pour les petits écrans */
+    }
+    div.car-logo {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+        width: 100%;
+        gap: 20px; /* Espacement entre les éléments */
+        justify-content: center; /* Centre les éléments horizontalement */
+        top: auto;
+        left: auto;
+    }
+    
+    div.car-logo > * { /* Sélectionne tous les enfants directs de div.car-logo */
+        flex: 0 0 calc(13% - 20px); /* Chaque élément prend un tiers de la largeur sans grandir ou rétrécir */
+        max-width: 100%; /* S'assure que l'élément ne déborde pas de son conteneur */
+        margin-bottom: 0; /* Supprime le margin-bottom pour éviter un double espacement */
+    }
+}
+
+//end CSS from Hero Section
+
+// Star Why Choose Section CSS
+
+div.why-choose{
+    display: flex;
+    margin-right: 116px;
+}
+
+div.why-choose-left{
+    width: 805px;
+    height: 536px;
+    left: 805px;
+    gap: 0px;
+    transform: scaleX(-1) scaleY(1);
+
+}
+
+div.metrics{
+    display: flex;
+    gap: 48px;
+    justify-content: end;
+}
+
+div.why-choose-text h1{
+    font-family: 'Conthrax Bold', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 66.58px;
+    letter-spacing: -0.5px;
+    text-align: right;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+div.why-choose-text p{
+    font-family: 'Lufga', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-align: right;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+div.metric-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement les enfants */
+    text-align: center; /* Assure que le texte du paragraphe est centré */
+}
+
+div.why-choose-stat{
+    text-align: right;
+}
+
+.why-choose-btn{
+    display: flex;
+    justify-content: end;
+}
+
+.why-choose-btn app-custom-button{
+    width: 294px;
+    max-width: 100%;
+}
+
+
+
+/* Media Queries pour le responsive design */
+
+@media (max-width: 1024px) {
+    div.why-choose {
+        margin-right: 50px; /* Réduire la marge pour les tablettes */
+        flex-direction: row;
+    }
+    
+    div.why-choose-text h1 {
+        font-size: 36px; /* Réduire la taille de la police pour les tablettes */
+        line-height: 50px;
+    }
+
+    div.why-choose-left {
+        display: none; /* Cacher l'élément sur les petits écrans */
+    }
+
+    div.metrics {
+        display: flex; /* Les éléments de metrics passent en colonne */
+        justify-content: end; /* Aligner au début de la colonne */
+        gap: 33px;
+    }
+
+    .why-choose-btn app-custom-button {
+        width: 200px; /* Réduire la largeur pour les tablettes */
+    }
+}
+
+@media (max-width: 768px) {
+    div.why-choose {
+        flex-direction: column; /* Disposition verticale pour les petits écrans */
+        margin-right: 20px; /* Réduire la marge pour les mobiles */
+    }
+    
+    
+    
+    div.metrics {
+        flex-direction: column; /* Les éléments de metrics passent en colonne */
+        align-items: flex-start; /* Aligner au début de la colonne */
+        gap: 18px;
+    }
+    
+    div.metric-item {
+        width: 100%; /* Prend toute la largeur disponible */
+    }
+    
+    div.why-choose-text h1, div.why-choose-text p, div.why-choose-stat {
+        text-align: right; /* Aligner le texte à gauche pour une meilleure lisibilité */
+    }
+    
+    div.why-choose-text h1 {
+        font-size: 28px; /* Réduire encore la taille de la police */
+        line-height: 38px;
+    }
+    
+    div.why-choose-text p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .why-choose-btn {
+        justify-content: center; /* Aligner le bouton à gauche */
+    }
+
+    .why-choose-btn app-custom-button {
+        width: 100%; /* Le bouton prend toute la largeur disponible sur les mobiles */
+        max-width: 280px; /* Optionnel, limite la largeur pour ne pas devenir trop large */
+    }
+}
+
+@media (max-width: 480px) {
+    div.why-choose-text h1 {
+        font-size: 24px; /* Réduire encore la taille pour les très petits écrans */
+        line-height: 32px;
+    }
+    
+    div.why-choose-text p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    div.metrics {
+        flex-direction: column; /* Les éléments de metrics passent en colonne */
+        align-items: flex-start; /* Aligner au début de la colonne */
+        gap: 0px;
+    }
+
+    .why-choose-btn app-custom-button {
+        max-width: 100%; /* Assure que le bouton ne dépasse pas sur les très petits écrans */
+        padding: 10px 15px; /* Ajuster le padding pour les très petits écrans */
+    }
+}
+// End Why Choose Section CSS
+
+// Start - Trending - Section
+
+div.trending {
+    position: relative;
+    margin-left: 116px;
+    margin-right: 116px;
+    padding-bottom: 140px;
+}
+
+div.trending-text h1 {
+    max-width: 314px; /* Utiliser max-width pour permettre une réduction */
+    height: auto; /* Permettre à la hauteur de s'ajuster selon le contenu */
+    gap: 0px;
+    font-family: 'Conthrax Bold', sans-serif;
+    font-size: clamp(32px, 8vw, 48px); /* Utiliser clamp pour une taille de police réactive */
+    font-weight: 700;
+    line-height: 1.38; /* Utiliser un rapport plutôt qu'une valeur fixe */
+    letter-spacing: -0.5px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+div.trending-text p {
+    font-family: 'Lufga', Arial, sans-serif;
+    font-size: clamp(14px, 4vw, 16px);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    text-align: left; /* Changer à gauche pour des petits écrans */
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    max-width: 100%;
+}
+
+div.trending-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Aligne le contenu en bas */
+    height: 100%; /* Hauteur totale du conteneur */
+}
+
+div.trending-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+}
+
+div.arrows {
+    width: 100%; /* Ajuster pour s'adapter à l'écran */
+    max-width: 128px; /* Limite la largeur sur les grands écrans */
+    height: 56px;
+    gap: 16px;
+    display: flex;
+    justify-content: space-between; /* Pour espacer les flèches */
+    align-items: center; /* Centre les flèches verticalement */
+    position: relative;
+}
+
+div.row-list {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur les petits écrans */
+    gap: 10px;
+}
+
+div.see-all-btn {
+    display: flex;
+    justify-content: center;
+}
+
+/* Media Queries pour ajustement sur différents écrans */
+
+@media (max-width: 1024px) {
+    div.trending {
+        margin-left: 50px;
+        margin-right: 50px;
+        padding-bottom: 80px; /* Réduire le padding pour les tablettes */
+    }
+    
+    div.trending-text h1 {
+        font-size: clamp(28px, 6vw, 40px); /* Ajuster la taille de police */
+    }
+}
+
+@media (max-width: 768px) {
+    div.trending {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-bottom: 60px; /* Réduire encore le padding pour les mobiles */
+    }
+    
+    div.trending-text h1 {
+        font-size: clamp(24px, 8vw, 32px);
+    }
+    
+    div.trending-text p {
+        text-align: left; /* Alignement à gauche pour une meilleure lisibilité sur mobile */
+    }
+    
+    div.trending-filter {
+        flex-direction: column; /* Empiler les éléments pour les petits écrans */
+        align-items: center; /* Centre les éléments horizontalement */
+    }
+    
+    div.arrows {
+        width: 100%;
+        max-width: none; /* Permettre à la largeur de s'adapter entièrement */
+    }
+}
+
+// End Trending - Section
+
+// Start App - Section
+
+.mobile-section {
+    position: relative;
+    min-height: 512px; /* Utiliser min-height pour permettre l'ajustement */
+    background-color: $success-color;
+    margin-bottom: 60px; /* Réduire pour les écrans plus petits */
+}
+
+.mobile-app-img img {
+    position: absolute;
+    max-width: 100%; /* Permet à l'image de s'adapter à la largeur du conteneur */
+    width: 1208px;
+    height: auto; /* Garde le ratio de l'image */
+}
+
+.mobile-app-img img.phone-left {
+    top: 0; /* Utiliser top au lieu de margin-top pour le positionnement */
+    left: -275px; /* Positionner en absolu par rapport au conteneur */
+    transform: translateY(-354px); /* Utiliser transform pour déplacer l'image */
+}
+
+.mobile-app-img img.phone-right {
+    top: 0; /* Utiliser top pour le positionnement */
+    right: 0; /* Aligner à droite */
+    transform: translateY(-117px) translateX(-44px); /* Utiliser transform pour positionner */
+}
+
+.mobile-app-cta {
+    position: absolute;
+    width: 362px; /* Prend toute la largeur disponible */
+    max-width: 100%px; /* Limite la largeur sur les grands écrans */
+    margin-left: auto; /* Centre horizontalement */
+    margin-right: 0; /* Remplace margin-left */
+    margin-top: 134px;
+    right: 116px; /* Déplace le CTA de la droite */
+}
+
+.mobile-app-text {
+    text-align: right; /* Garde l'alignement à droite par défaut */
+    padding-right: 20px; /* Réduire le padding pour les petits écrans */
+}
+
+.mobile-app-text h1 {
+    font-family: 'Conthrax Bold', sans-serif;
+    font-size: clamp(32px, 8vw, 48px); /* Utiliser clamp pour une taille de police réactive */
+    font-weight: 700;
+    line-height: 1.38; /* Utiliser un rapport plutôt qu'une valeur fixe */
+    letter-spacing: -0.5px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.cta-btn {
+    display: flex;
+    gap: 24px;
+    justify-content: flex-end; /* Aligner les boutons à droite par défaut */
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si nécessaire */
+}
+
+/* Media Queries pour ajustement sur différents écrans */
+
+@media (max-width: 1024px) {
+    .mobile-app-img img {
+        width: auto; /* Ajuste la taille de l'image */
+    }
+    
+    .mobile-app-img img.phone-left {
+        left: -15%; /* Réduire le déplacement à gauche */
+        transform: translateY(-20%);
+    }
+    
+    .mobile-app-img img.phone-right {
+        right: -15%; /* Réduire le déplacement à droite */
+        transform: translateY(-10%);
+    }
+    
+    .mobile-app-cta {
+        right: 20px; /* Réduire l'espace à droite */
+        top: 50%; /* Positionner verticalement au milieu */
+        transform: translateY(-50%); /* Centrer verticalement */
+    }
+    
+    .mobile-section {
+        min-height: 400px; /* Réduire la hauteur minimum */
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-app-img {
+        position: static; /* Réinitialiser le positionnement */
+    }
+    
+    .mobile-app-img img {
+       display: none;
+    }
+    
+    .mobile-app-img img.phone-left, .mobile-app-img img.phone-right {
+        margin: 20px 0; /* Espacement vertical entre les images */
+    }
+    
+    .mobile-app-cta {
+        width: 100%; /* Prendre toute la largeur */
+        max-width: none; /* Pas de restriction de largeur */
+        margin: 20px 0; /* Espacement vertical */
+        text-align: center; /* Centrer le texte */
+    }
+    
+    .mobile-app-text {
+        text-align: center; /* Aligner au centre pour les petits écrans */
+        padding: 0 20px; /* Ajouter un padding pour les petits écrans */
+    }
+    
+    .mobile-app-text h1 {
+        font-size: clamp(24px, 10vw, 36px); /* Ajuster la taille pour les petits écrans */
+    }
+    
+    .cta-btn {
+        justify-content: center; /* Centrer les boutons */
+    }
+}
+
+// End App - Section
+
+// Testimony - Section
+div.testimony{
+    display: flex;
+    margin-top: 200px;
+    margin-bottom: 113px;
+    margin-left: 116px;
+    margin-right: 116px;
+    gap: 64px;
+}
+
+.testimony-text p{
+    font-family: Lufga;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.testimony-content{
+    display: flex;
+}
+
+.testimony-user{
+    display: flex;
+    width: 420px; /* Largeur fixe */
+    height: 56px; /* Hauteur fixe */
+    gap: 16px; /* Espace entre les éléments internes */
+    align-items: center;
+}
+
+.testimony-user-title{
+    width: fit-content; /* Équivalent de "Hug" */
+    max-width: 348px;
+    height: fit-content;
+    gap: 4px;
+}
+
+.testimony-user-title h6{
+    font-family: 'Conthrax', sans-serif; /* Ajout d'une font-family de secours */
+    margin: 0px;
+}
+
+.testimony-user-title p{
+    font-family: 'Lufga', sans-serif; /* Ajout d'une font-family de secours */
+    margin: 0px;
+}
+
+.testimony-action button{
+    width: 56px;
+    height: 56px;
+    gap: 12px;
+    border-radius: 28px 28px 28px 28px;
+    border: 1px 1px 1px 1px;
+}
+
+// FAQ - Section
+.faq-section{
+    margin-right: 112px;
+    margin-left: 120px;
+    margin-bottom: 120px;
+}
+
+.faq-header{
+    display: flex;
+    width: full;
+    height: 94px;
+    margin-bottom: 64px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.faq-header h1{
+    font-family: Conthrax;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.faq-header p{
+    font-family: Lufga;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.faq-content{
+    width: 768px;
+    height: 504px;
+    gap: 32px;
+
+}
+
+
+// General - styles
+body {
+    font-family: 'Conthrax', sans-serif;
+    margin: 0px;
+}
+
+h1 {
+    font-family: 'Conthrax', sans-serif;
+    font-weight: bold;
+}
+
+button {
+    cursor: pointer;
+}

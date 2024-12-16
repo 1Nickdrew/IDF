@@ -1,0 +1,102 @@
+$primary-yellow: rgba(255, 188, 1, 1);
+$primary-green: rgba(7, 42, 24, 1);
+$secondary-green:rgba(21, 125, 73, 1);
+$neutral-50: rgba(244, 247, 250, 1);
+$neutral-800: rgba(53, 59, 65, 1);
+$gray-300: rgba(208, 213, 221, 1);
+$black: rgba(0, 0, 0, 1);
+$white: rgba(255, 255, 255, 1);
+
+
+// Header - Section
+header nav {
+    justify-content: center; /* Centre horizontalement */
+    max-width: 100%;
+}
+
+div.nav-content{
+    display: flex;
+    height: auto;
+    position: absolute;
+    width: 100%;
+}
+
+.box {
+    flex: 1; /* Permet aux boxes de prendre une hauteur égale */
+    display: flex; /* Utilise flexbox à l'intérieur de chaque box */
+    align-items: center; /* Centre verticalement le contenu */
+    justify-content: center; /* Centre horizontalement le contenu */
+}
+
+.nav-left {
+    align-self: flex-start; /* Aligne la première box à gauche */
+    display: flex;
+    justify-content: left;
+    gap: 38px;
+    padding-top: 20px;
+}
+
+.nav-center {
+    align-self: center; /* Aligne la deuxième box au centre */
+}
+
+.nav-right {
+    align-self: flex-end; /* Aligne la troisième box à droite */
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+div.box-nav-left-button button{
+    background: none;
+    border: none;
+}
+
+div.box-nav-left-lang {
+    display: flex;
+    align-items: center;
+
+}
+
+div.lang-button{
+    display: flex;
+    margin-left: 116px;
+}
+
+div.box.nav-left-lang, select{
+    border: none;              /* Supprime les bordures */
+}
+
+div.box.nav-right{
+    display: flex;
+    justify-content: space-around; /* Répartit l'espace également */
+    gap: 24px; /* Ajoute un espace fixe entre les éléments */
+    max-width: 530px;
+}
+
+div.box.nav-right button.btn-2{
+    background-color: $primary-yellow;
+    color: $white;
+    padding: 10px;
+    border: 1px;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+@media (max-width: 768px) {
+    div.box.nav-right{
+        display: none;
+    }
+    div.box.nav-center {
+        display: flex;
+        justify-content: end;
+    }
+    div.box-nav-left-lang{
+        display: none;
+    }
+    div.lang-button {
+        margin-left: 0px;
+    }
+    div.box.nav-center img{
+        max-width: 71px;
+    }
+}
