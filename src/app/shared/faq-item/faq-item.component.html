@@ -1,0 +1,12 @@
+<!-- faq-item.component.html -->
+<div class="faq-response" [class.open]="isOpen" (click)="toggle()">
+    <div>
+        <h1>{{ question }}</h1>
+        <p>{{ answer }}</p>
+    </div>
+    <div>
+        <button>
+            <i [class]="isOpen ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'"></i>
+        </button>
+    </div>
+</div>

@@ -12,7 +12,7 @@ import {
 
 @Component({
   selector: 'app-footer',
-  imports: [CommonModule, CustomInputComponent, ReactiveFormsModule,],
+  imports: [CommonModule, CustomInputComponent, ReactiveFormsModule, CustomButtonComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })

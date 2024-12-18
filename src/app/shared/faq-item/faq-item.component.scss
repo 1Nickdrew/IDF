@@ -1,0 +1,49 @@
+/* faq-item.component.css */
+.faq-response {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .faq-response:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .faq-response h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .faq-response p {
+    font-size: 14px;
+    margin: 5px 0 0 0;
+    display: none;
+  }
+  
+  .faq-response.open p {
+    display: block;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  button i {
+    transition: transform 0.3s ease;
+  }
+  
+  button i.fa-circle-minus {
+    transform: rotate(0deg);
+  }
+  
+  button i.fa-circle-plus {
+    transform: rotate(90deg);
+  }

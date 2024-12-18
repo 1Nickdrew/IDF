@@ -79,7 +79,7 @@ export class CustomButtonComponent {
   @Input() svgSrc?: string;
   @Input() showText = true;
   @Input() width = '100%';
-  @Input() height = '56px';
+  @Input() height = '100%';
   @Input() backgroundColor = 'rgba(255, 188, 1, 1)';
   @Input() textColor = 'black';
   @Input() borderStyle = '1px solid rgba(255, 188, 1, 1)';

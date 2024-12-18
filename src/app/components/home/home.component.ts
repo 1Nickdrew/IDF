@@ -4,6 +4,7 @@ import { CustomInputComponent } from '../../shared/input/input.component';
 import { SubNavComponent } from '../../shared/sub-nav/sub-nav.component';
 import { CarCardComponent } from '../../shared/car-card/car-card.component';
 import { CarCardData } from '../../shared/car-card/car-card.interface';
+import { FaqItemComponent } from '../../shared/faq-item/faq-item.component';
 import { CommonModule } from '@angular/common'; // Important !
 import { 
   ReactiveFormsModule, 
@@ -15,7 +16,7 @@ import {
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule,CustomButtonComponent, CustomInputComponent, ReactiveFormsModule, SubNavComponent, CarCardComponent],
+  imports: [CommonModule,CustomButtonComponent, CustomInputComponent, ReactiveFormsModule, SubNavComponent, CarCardComponent, FaqItemComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

@@ -465,11 +465,13 @@ div.see-all-btn {
 }
 
 .mobile-app-text {
+    color: $white-color;
     text-align: right; /* Garde l'alignement à droite par défaut */
     padding-right: 20px; /* Réduire le padding pour les petits écrans */
 }
 
 .mobile-app-text h1 {
+    color: $white-color;
     font-family: 'Conthrax Bold', sans-serif;
     font-size: clamp(32px, 8vw, 48px); /* Utiliser clamp pour une taille de police réactive */
     font-weight: 700;
@@ -483,30 +485,20 @@ div.see-all-btn {
     display: flex;
     gap: 24px;
     justify-content: flex-end; /* Aligner les boutons à droite par défaut */
-    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si nécessaire */
 }
 
 /* Media Queries pour ajustement sur différents écrans */
 
 @media (max-width: 1024px) {
     .mobile-app-img img {
-        width: auto; /* Ajuste la taille de l'image */
-    }
-    
-    .mobile-app-img img.phone-left {
-        left: -15%; /* Réduire le déplacement à gauche */
-        transform: translateY(-20%);
-    }
-    
-    .mobile-app-img img.phone-right {
-        right: -15%; /* Réduire le déplacement à droite */
-        transform: translateY(-10%);
+        display: none;
     }
     
     .mobile-app-cta {
-        right: 20px; /* Réduire l'espace à droite */
-        top: 50%; /* Positionner verticalement au milieu */
-        transform: translateY(-50%); /* Centrer verticalement */
+        width: 100%; /* Prendre toute la largeur */
+        max-width: none; /* Pas de restriction de largeur */
+        margin: 20px 0; /* Espacement vertical */
+        text-align: center; /* Centrer le texte */
     }
     
     .mobile-section {
@@ -521,10 +513,6 @@ div.see-all-btn {
     
     .mobile-app-img img {
        display: none;
-    }
-    
-    .mobile-app-img img.phone-left, .mobile-app-img img.phone-right {
-        margin: 20px 0; /* Espacement vertical entre les images */
     }
     
     .mobile-app-cta {
@@ -550,8 +538,9 @@ div.see-all-btn {
 
 // End App - Section
 
-// Testimony - Section
-div.testimony{
+// Start - Testimony - Section
+
+div.testimony {
     display: flex;
     margin-top: 200px;
     margin-bottom: 113px;
@@ -560,59 +549,111 @@ div.testimony{
     gap: 64px;
 }
 
-.testimony-text p{
-    font-family: Lufga;
-    font-size: 48px;
+.testimony-text p {
+    font-family: Lufga, sans-serif;
+    font-size: clamp(24px, 6vw, 48px); /* Utiliser clamp pour une taille de police réactive */
     font-weight: 500;
-    line-height: 60px;
+    line-height: 1.25; /* Utiliser un rapport plutôt qu'une valeur fixe */
     letter-spacing: -0.02em;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
 }
 
-.testimony-content{
+.testimony-content {
     display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
 }
 
-.testimony-user{
+.testimony-user {
     display: flex;
-    width: 420px; /* Largeur fixe */
-    height: 56px; /* Hauteur fixe */
-    gap: 16px; /* Espace entre les éléments internes */
+    width: 100%; /* Adapte à la largeur du conteneur */
+    max-width: 420px; /* Limite la largeur sur les grands écrans */
+    height: auto; /* Ajuste la hauteur selon le contenu */
+    gap: 16px;
     align-items: center;
 }
 
-.testimony-user-title{
-    width: fit-content; /* Équivalent de "Hug" */
-    max-width: 348px;
+.testimony-user-title {
+    width: fit-content;
+    max-width: 100%; /* Prend toute la largeur disponible si nécessaire */
     height: fit-content;
     gap: 4px;
 }
 
-.testimony-user-title h6{
-    font-family: 'Conthrax', sans-serif; /* Ajout d'une font-family de secours */
+.testimony-user-title h6 {
+    font-family: 'Conthrax', sans-serif;
     margin: 0px;
 }
 
-.testimony-user-title p{
-    font-family: 'Lufga', sans-serif; /* Ajout d'une font-family de secours */
+.testimony-user-title p {
+    font-family: 'Lufga', sans-serif;
     margin: 0px;
 }
 
-.testimony-action button{
+.testimony-action button {
     width: 56px;
     height: 56px;
     gap: 12px;
-    border-radius: 28px 28px 28px 28px;
-    border: 1px 1px 1px 1px;
+    border-radius: 28px;
+    border: 1px solid; /* Simplifier la définition de la bordure */
 }
+
+/* Media Queries pour ajustement sur différents écrans */
+
+@media (max-width: 1024px) {
+    div.testimony {
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 100px; /* Réduire la marge pour les tablettes */
+        margin-bottom: 80px;
+        gap: 30px; /* Réduire l'espace entre les éléments */
+    }
+    
+    .testimony-text p {
+        font-size: clamp(20px, 5vw, 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    div.testimony {
+        flex-direction: column; /* Empile les éléments verticalement */
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 50px; /* Réduire encore la marge pour les mobiles */
+        margin-bottom: 50px;
+        gap: 20px;
+    }
+    
+    .testimony-content {
+        flex-direction: column-reverse; /* Met le texte au-dessus de l'image */
+    }
+    
+    .testimony-user {
+        width: 100%; /* Prend toute la largeur disponible */
+        justify-content: center; /* Centre le contenu horizontalement */
+    }
+    
+    .testimony-text p {
+        text-align: center; /* Centre le texte pour une meilleure lisibilité sur mobile */
+        font-size: clamp(18px, 8vw, 32px);
+    }
+    
+    .testimony-user-title {
+        text-align: center; /* Centre le texte pour les titres utilisateur */
+    }
+    
+    .testimony-action button {
+        margin: 0 auto; /* Centre le bouton */
+    }
+}
+
+// End - Testimony - Section
 
 // FAQ - Section
 .faq-section{
     margin-right: 112px;
     margin-left: 120px;
-    margin-bottom: 120px;
 }
 
 .faq-header{
@@ -622,6 +663,10 @@ div.testimony{
     margin-bottom: 64px;
     gap: 20px;
     justify-content: center;
+}
+
+.faq-response{
+    display: flex;
 }
 
 .faq-header h1{
@@ -643,13 +688,19 @@ div.testimony{
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    color: $neutral-color-600
+}
+
+.faq-container{
+    display: flex;
+    justify-content: center; /* Centre la boîte horizontalement */
+    width: 100%; /* Prend toute la largeur disponible */
+    height: 100vh; /* Exemple de hauteur pour simuler une page complète */
 }
 
 .faq-content{
     width: 768px;
     height: 504px;
-    gap: 32px;
-
 }
 
 

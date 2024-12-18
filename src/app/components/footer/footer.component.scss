@@ -1,17 +1,98 @@
 @use '../../../styles' as *; // Chemin vers le fichier styles.scss
 
-footer{
+footer {
     max-height: 336px;
-    background-color: $secondary-color;
+    background-color: $success-color;
 }
 
-.eg-btn{
-    all: unset;
-    width: 176px;
-    height: 64px;
+.footer-top, .footer-bottom {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur petits écrans */
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    border: 25px;
+    margin-bottom: 64px;
+    padding: 20px 20px; /* Réduction par défaut pour petits écrans */
+}
+
+.footer-top-left-links {
+    display: flex;
+    flex-wrap: wrap; /* Pour les petits écrans */
+    gap: 16px; /* Réduction de l'espace entre les liens */
+}
+
+.footer-btn {
+    width: 85px;
+    height: 44px;
+}
+
+.footer-top-right {
+    display: flex;
+    flex-wrap: wrap; /* Pour les petits écrans */
+    gap: 8px; /* Réduction de l'espace entre les éléments */
+    align-items: flex-end;
+}
+
+h1, a, p {
+    color: $white-color;
+}
+
+.footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap; /* Pour les petits écrans */
+    gap: 8px; /* Réduction de l'espace entre les liens */
+}
+
+/* Media Queries pour le responsive design */
+
+@media (min-width: 768px) {
+    footer {
+        padding: 0 50px; /* Ajustement pour tablettes */
+    }
+    
+    .footer-top, .footer-bottom {
+        padding: 20px 50px;
+    }
+}
+
+@media (min-width: 1024px) {
+    footer {
+        padding: 0 116px; /* Revient à la largeur originale pour les écrans plus grands */
+    }
+    
+    .footer-top, .footer-bottom {
+        padding: 0 116px;
+    }
+    
+    .footer-top-left-links {
+        gap: 32px; /* Revient à l'espacement original */
+    }
+    
+    .footer-top-right {
+        gap: 16px; /* Revient à l'espacement original */
+    }
+    
+    .footer-bottom-links {
+        gap: 16px; /* Revient à l'espacement original */
+    }
+}
+
+@media (max-width: 767px) {
+    footer {
+        max-height: none; /* Permet à la hauteur d'être flexible sur les petits écrans */
+    }
+    
+    .footer-top, .footer-bottom {
+        flex-direction: column; /* Empile les éléments verticalement */
+        align-items: flex-start; /* Aligne au début de la colonne */
+        margin-bottom: 30px; /* Réduction de la marge pour les petits écrans */
+    }
+    
+    .footer-top-left-links, .footer-top-right, .footer-bottom-links {
+        width: 100%; /* Prend toute la largeur disponible */
+        justify-content: flex-start; /* Aligne au début */
+    }
+    
+    .footer-btn {
+        margin-top: 10px; /* Ajout d'une marge pour séparer du contenu précédent */
+    }
 }
