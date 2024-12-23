@@ -93,7 +93,7 @@ div.car-logo img {
     }
     div.left {
         height: 300px; /* Hauteur d'exemple, ajustez selon votre contenu */
-        margin-top: 54px; /* Réinitialiser la marge pour les mobiles */
+        margin-top: 84px; /* Réinitialiser la marge pour les mobiles */
         /* Ajout de l'image de fond */
         background-image: url('../../../../public/images/homepage/hero.png');
         background-size: cover; /* Couvre toute la surface */
@@ -147,6 +147,31 @@ div.car-logo img {
     }
 }
 
+@media (max-width: 375px) {
+    .search-container h1{
+        width: 343px;
+        height: 132px;
+
+    }
+    div.left {
+        height: 300px; /* Hauteur d'exemple, ajustez selon votre contenu */
+        margin-top: 84px; /* Réinitialiser la marge pour les mobiles */
+        /* Ajout de l'image de fond */
+        background-image: url('../../../../public/images/homepage/hero.png');
+        background-size: 150%; /* Couvre toute la surface */
+        background-repeat: no-repeat;
+        background-position: left 50px top 25px; /* Décalage de 20px vers la droite */
+    }
+}
+
+@media (max-width: 374px) {
+    .search-container h1{
+        width: auto;
+        height: auto;
+
+    }
+}
+
 //end CSS from Hero Section
 
 // Star Why Choose Section CSS
@@ -172,7 +197,10 @@ div.metrics{
 }
 
 div.why-choose-text h1{
-    font-family: 'Conthrax Bold', sans-serif;
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: flex-end; /* Alignement à gauche */
+    font-family: 'Conthrax', sans-serif;
     font-size: 48px;
     font-weight: 700;
     line-height: 66.58px;
@@ -198,6 +226,9 @@ div.metric-item{
     flex-direction: column;
     align-items: center; /* Centre horizontalement les enfants */
     text-align: center; /* Assure que le texte du paragraphe est centré */
+}
+div.metric-item h1{
+    color: $secondary-color;
 }
 
 div.why-choose-stat{
@@ -231,6 +262,12 @@ div.why-choose-stat{
 
     div.why-choose-left {
         display: none; /* Cacher l'élément sur les petits écrans */
+    }
+    div.why-choose-right{
+        background-image: url('../../../../public/images/homepage/whychoose-left.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: left -110px top 400px /* Décalage de 20px vers la droite */
     }
 
     div.metrics {
@@ -360,6 +397,7 @@ div.trending-filter {
     justify-content: space-between;
     margin-bottom: 20px;
     flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    overflow: hidden;
 }
 
 div.arrows {
@@ -549,6 +587,11 @@ div.testimony {
     gap: 64px;
 }
 
+.testimony-right{
+    display: flex;
+    overflow: hidden;
+}
+
 .testimony-text p {
     font-family: Lufga, sans-serif;
     font-size: clamp(24px, 6vw, 48px); /* Utiliser clamp pour une taille de police réactive */
@@ -717,4 +760,8 @@ h1 {
 
 button {
     cursor: pointer;
+}
+
+span{
+    color: $secondary-color;
 }

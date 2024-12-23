@@ -1,3 +1,5 @@
+@use '../../../styles' as *; // Chemin vers le fichier styles.scss
+
 .custom-input-container {
     display: flex;
     flex-direction: column;
@@ -24,7 +26,8 @@
   .input-wrapper {
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
+    border: 1px solid $white-color;
+    background-color: $neutral-color-50;
     border-radius: 8px;
     padding: 8px 12px;
     transition: all 0.3s ease;
@@ -48,7 +51,7 @@
     flex-grow: 1;
     border: none;
     outline: none;
-    background: #fff;
+    background: transparent;
     width: 100%;
 
     &:disabled {

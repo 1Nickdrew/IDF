@@ -9,13 +9,42 @@ $background-color: rgba(244, 247, 250, 1); // Couleur de fond
 $neutral-color-800: rgba(53, 59, 65, 1);
 $neutral-color-600: rgba(106, 118, 130, 1);
 $neutral-color-200: rgba(222, 228, 235, 1);
+$neutral-color-50: rgba(244, 247, 250, 1);
 $success-color: rgba(7, 42, 24, 1);
 $white-color: rgba(255, 255, 255, 1);
 $black-color: rgba(0, 0, 0, 1);
 
 // Définition des variables de polices
-$font-primary: 'Roboto', sans-serif; // Police principale
-$font-secondary: 'Arial', sans-serif; // Police secondaire
+
+@font-face {
+  font-family: 'Conthrax';
+  src: url('../public/fonts/ConthraxSb-Regular.woff2') format('woff2'),
+       url('../public/fonts/ConthraxSb-Regular.woff') format('woff'),
+       url('../public/fonts/ConthraxSb-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Conthrax';
+  src: url('../public/fonts/Conthrax.woff2') format('woff2'),
+       url('../public/fonts/Conthrax.woff') format('woff'),
+       url('../public/fonts/Conthrax.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('../public/fonts/Lufga-Light.woff2') format('woff2'),
+       url('../public/fonts/Lufga-Light.woff') format('woff'),
+       url('../public/fonts/Lufga-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-primary: 'Conthrax', sans-serif; // Police principale
+$font-secondary: 'Lufga', sans-serif; // Police secondaire
 
 // Appliquer les styles globaux
 body {
@@ -42,4 +71,4 @@ a {
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Lufga, "Helvetica Neue", sans-serif; }

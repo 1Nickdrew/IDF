@@ -19,6 +19,7 @@ div.nav-content{
     height: auto;
     position: absolute;
     width: 100%;
+    z-index: 9999;
 }
 
 .box {
@@ -98,5 +99,12 @@ div.box.nav-right button.btn-2{
     }
     div.box.nav-center img{
         max-width: 71px;
+    }
+    div.nav-content{
+        height: 104px;
+    }
+    .box-nav-left-button{
+        display: flex;
+        margin: 12px;
     }
 }
